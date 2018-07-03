@@ -7,7 +7,14 @@ The solution consists basically on an implementation of  the ***Composite Patter
 
 On top of this pattern, variants for extensibility and adaptability must be applied; in this case the use of an ***abstract class*** to define an atomic rental is the strategy of choice. This gives a way to ***decouple the business logic asociated with the costs and rental types***, delegating the responsability of knowing the cost and way to treat that cost in different ways, if needed, to the ***concret classes*** that extends from it.
 
+### Python considerations
+
+Since python has no interface concept the Composite Pattern is being applied using Abstract Base Meta Classes (ABC) from Python, but the same principles are being used.
+
+
 ## Howto run tests
+
+### Java
 
 Have in mind that the code was developed under Eclipse Photon, with JUnit 5 and OpenJDK 10; it shouldn't matter but, knowing the headaches that Java may produce, it's never a bad idea to point out under which environment conditions a product was developed.
 
@@ -18,3 +25,11 @@ Once you have selected the source directory, click the ```Libraries``` tab and c
 Now that you have open the project with Eclipse IDE, right click on the project root folder, on the package explorer. Go to ```Coverage as ...``` and then ```JUnit Test```. Eclipse will automatically look for all the test cases and execute them.
 
 > Test coverage 96,8%
+
+### Python
+
+For Phyton, I have used the included Unit Testing facility, but to keep it simple, the tests cases can be run, at the python source directory, with the following command:
+
+```
+find . -name '*py' -exec python '{}' \;
+```
